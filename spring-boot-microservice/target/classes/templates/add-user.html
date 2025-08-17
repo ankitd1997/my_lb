@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>Add User</title>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+   <h1 class="mb-4">Add User</h1>
+   <form th:action="@{/users/add}" th:object="${user}" method="post">
+       <div class="form-group">
+           <label for="ankit">Ankit:</label>
+           <select id="ankit" th:field="*{ankit}" class="form-control">
+               <option value="">Select Option</option>
+               <option value="0">A</option>
+               <option value="1">P</option>
+           </select>
+       </div>
+       <div class="form-group">
+           <label for="nishant">Nishant:</label>
+           <select id="nishant" th:field="*{nishant}" class="form-control">
+               <option value="">Select Option</option>
+               <option value="0">A</option>
+               <option value="1">P</option>
+           </select>
+       </div>
+       <div class="form-group">
+           <label for="shailu">Shailu:</label>
+           <select id="shailu" th:field="*{shailu}" class="form-control">
+               <option value="">Select Option</option>
+               <option value="0">A</option>
+               <option value="1">P</option>
+           </select>
+       </div>
+       <div class="form-group">
+           <label for="dumya">Dumya:</label>
+           <select id="dumya" th:field="*{dumya}" class="form-control">
+               <option value="">Select Option</option>
+               <option value="0">A</option>
+               <option value="1">P</option>
+           </select>
+       </div>
+       <div class="form-group">
+           <label for="swapnil">Swapnil:</label>
+           <select id="swapnil" th:field="*{swapnil}" class="form-control">
+               <option value="">Select Option</option>
+               <option value="0">A</option>
+               <option value="1">P</option>
+           </select>
+       </div>
+       <div class="form-group">
+           <label for="vipib">Vipin:</label>
+           <select id="vipib" th:field="*{vipib}" class="form-control">
+               <option value="">Select Option</option>
+               <option value="0">A</option>
+               <option value="1">P</option>
+           </select>
+       </div>
+       <div class="form-group">
+           <label for="date">Date:</label>
+           <input type="date" id="date" th:field="*{date}" class="form-control" required />
+       </div>
+       <div class="d-flex">
+           <button type="submit" class="btn btn-primary mr-2">Add User</button>
+           <a th:href="@{/users}" class="btn btn-secondary">Back to List</a>
+       </div>
+   </form>
+</div>
+<!-- Bootstrap and jQuery JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

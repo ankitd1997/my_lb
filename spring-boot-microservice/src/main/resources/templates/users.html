@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>Users Table</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+   <h1>Users</h1>
+   <p><a th:href="@{/users/add}" class="btn btn-primary mb-3">Add User Details</a></p>
+   <table class="table table-bordered">
+       <thead>
+           <tr>
+               <th>Date</th>  <!-- Now the first column -->
+               <th>Ankit</th>
+               <th>Nishant</th>
+               <th>Shailu</th>
+               <th>Dumya</th>
+               <th>Swapnil</th>
+               <th>Vipin</th>
+               <th>Action</th>
+               <th>Grand Total</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr th:each="user : ${users}">
+               <td th:text="${user.date}"></td> <!-- Date now the first data column -->
+               <td th:text="${user.ankit}"></td>
+               <td th:text="${user.nishant}"></td>
+               <td th:text="${user.shailu}"></td>
+               <td th:text="${user.dumya}"></td>
+               <td th:text="${user.swapnil}"></td>
+               <td th:text="${user.vipib}"></td>
+               <td>
+                   <a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn btn-danger btn-sm">Delete Entry</a>
+               </td>
+               <!-- Leave this cell empty for individual rows -->
+               <td></td>
+           </tr>
+       </tbody>
+       <tfoot>
+           <tr class="bg-warning text-dark">
+               <td></td> <!-- No total for date -->
+               <td class="text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${dispAnkit}"></td>
+               <td class="text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${dispNishant}"></td>
+               <td class="text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${dispShailu}"></td>
+               <td class="text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${dispDumya}"></td>
+               <td class="text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${dispSwapnil}"></td>
+               <td class="text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${dispVipib}"></td>
+               <td></td>
+               <td class="bg-success text-white text-center" style="font-weight: bold; font-size: 1.2em;" th:text="${grandTotal}"></td>
+           </tr>
+       </tfoot>
+   </table>
+</div>
+</body>
+</html>
+``` 
+
