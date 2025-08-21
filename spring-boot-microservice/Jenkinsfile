@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    // Run the container in detached mode mapping ports or volumes as needed
+                  //  sh 'docker run -d --name my-running-app -p 8080:8080 yourdockeruser/yourapp:latest'
+                    sh 'docker run -p 8070:8090 -e SPRING_DATA_MONGODB_URI=mongodb://host.docker.internal:27017/yourdbname  spring-boot-microservice'
+                }
+            }
+        }
+
+        stage('Check Container Status') {
+            steps {
+                script {
+                    // Check if the container is running
+                    def status = sh(script: 'docker ps -q --filter "name=my-running-app"', returnStdout: true).trim()
+                    if (status) {
+                        echo 'Container is running successfully.'
+                    } else {
+                        error 'Container is not running!'
+                    }
+                }
+            }
+        }
+
+      
+    }
+}
