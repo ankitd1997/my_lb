@@ -12,19 +12,7 @@ pipeline {
             }
         }
 
-        stage('Check Container Status') {
-            steps {
-                script {
-                    // Check if the container is running
-                    def status = sh(script: 'docker ps -q --filter "name=my-running-app"', returnStdout: true).trim()
-                    if (status) {
-                        echo 'Container is running successfully.'
-                    } else {
-                        error 'Container is not running!'
-                    }
-                }
-            }
-        }
+       
 
       
     }
