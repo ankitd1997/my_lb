@@ -5,10 +5,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    // Run the container in detached mode mapping ports or volumes as needed
-                   // bat 'docker run -d --name strange_elbakyan -p 8080:8080 ankitd1997/spring-boot-microservice:latest'
-                      bat 'docker run -d  -e SPRING_DATA_MONGODB_URI=mongodb://host.docker.internal:27017/yourdbname -p 8070:8090 spring-boot-microservice:latest'
-                    //sh 'docker run -p 8070:8090 -e SPRING_DATA_MONGODB_URI=mongodb://host.docker.internal:27017/yourdbname  spring-boot-microservice'
+               bat 'docker run -d  -e SPRING_DATA_MONGODB_URI=mongodb://host.docker.internal:27017/yourdbname -p 8070:8090 spring-boot-microservice:latest'
                 }
             }
         }
