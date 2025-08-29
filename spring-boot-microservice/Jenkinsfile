@@ -17,6 +17,7 @@ pipeline {
             steps {
                 script {
                         echo "Running tests"
+                        echo "Tests completed"
                 }   
                          }
             
