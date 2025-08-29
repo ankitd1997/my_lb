@@ -2,4 +2,5 @@ com\example\microservice\model\User.class
 com\example\microservice\SpringBootMicroserviceApplication.class
 com\example\microservice\repository\UserRepository.class
 com\example\microservice\service\UserService.class
+com\example\microservice\model\UserFormData.class
 com\example\microservice\controller\UserController.class
